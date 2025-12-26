@@ -35,7 +35,7 @@ const EmployeeDetails = ({ employee, setEmployeesData }) => {
                                     <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
                                         {employee.tasks.map(task =>
                                             <>
-                                                <TaskCard key={task.id} task={task} />
+                                                <TaskCard key={task.id} empID={employee.id} task={task} />
                                             </>
                                         )}
                                     </div>

@@ -11,6 +11,7 @@ const Stats = ({ employeesData }) => {
                 completedTasks: 0,
                 pendingTasks: 0,
                 failedTasks: 0,
+                inReviewTasks: 0,
             }
         }
 
@@ -19,6 +20,7 @@ const Stats = ({ employeesData }) => {
         let completedTasks = 0
         let pendingTasks = 0
         let failedTasks = 0
+        let inReviewTasks = 0
 
         employeesData.forEach(emp => {
             totalEmployees++;
@@ -27,6 +29,7 @@ const Stats = ({ employeesData }) => {
                 if (task.status === "completed") completedTasks++;
                 else if (task.status === "pending") pendingTasks++;
                 else if (task.status === "failed") failedTasks++;
+                else if (task.status === "in_review") inReviewTasks++;
             })
         });
 
@@ -36,7 +39,8 @@ const Stats = ({ employeesData }) => {
             completedTasks,
             pendingTasks,
             failedTasks,
-        }
+            inReviewTasks,
+        };
     }, [employeesData]);
 
 
@@ -60,6 +64,7 @@ const Stats = ({ employeesData }) => {
             <StatCard title={"Completed Tasks"} value={stats.completedTasks} />
             <StatCard title={"Pending Tasks"} value={stats.pendingTasks} />
             <StatCard title={"Failed Tasks"} value={stats.failedTasks} />
+            <StatCard title={"Review Stage"} value={stats.inReviewTasks} />
         </div>
     )
 }

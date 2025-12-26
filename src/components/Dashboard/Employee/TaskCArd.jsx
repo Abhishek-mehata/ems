@@ -16,7 +16,7 @@ const TaskCArd = ({ task, onStatusChange }) => {
         }
     }
 
-    // console.log(task)
+
     return (
         <div className='border p-4 rounded-lg bg-gray-900  border-gray-700 hover:border-gray-600 transition duration-100'>
 
