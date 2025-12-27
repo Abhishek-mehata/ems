@@ -6,6 +6,7 @@ import AdminSidebar from './Admin/AdminSIdebar'
 import Stats from './Admin/Stats'
 import EmployeeTable from './Admin/emp-table/EmployeeTable'
 import Reports from './Admin/Reports'
+import CreateTask from './Admin/create-task/CreateTask'
 
 const AdminDashboard = (props) => {
     const { employeesData, adminData, setEmployeesData } = useContext(AuthContext);
@@ -23,7 +24,8 @@ const AdminDashboard = (props) => {
             <Header props={props} />
 
             {/*  */}
-            <div className='flex gap-4 w-full mt-4 h-[calc(100vh-144px)] bg-[#1a1a1a] rounded-lg'>
+            {/* <div className='flex gap-4 w-full mt-4 h-[calc(100vh-144px)] bg-[#1a1a1a] rounded-lg'> */}
+            <div className='flex gap-4 w-full mt-4 h-[calc(100vh-144px)] bg-gray-900 rounded-lg'>
                 <AdminSidebar activePage={activePage} setActivePage={setActivePage} logout={props.logout} />
 
                 <main className='flex-1 '>
@@ -36,7 +38,7 @@ const AdminDashboard = (props) => {
 
                     {activePage === "employees" && (<EmployeeTable employeesData={employeesData} setEmployeesData={setEmployeesData} />)}
 
-                    {activePage === "create-task" && ("Create Task Content")}
+                    {activePage === "create-task" && (<CreateTask />)}
 
                     {activePage === "reports" && (<Reports />)}
 

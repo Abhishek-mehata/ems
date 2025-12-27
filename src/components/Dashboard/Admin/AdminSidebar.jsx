@@ -9,7 +9,7 @@ const AdminSidebar = ({ activePage, setActivePage, logout }) => {
 
 
     return (
-        <div className=' w-64 h-full p-4 rounded-lg bg-gray-900 text-white'>
+        <div className=' w-64 h-full p-4 rounded-lg bg-gray-900 text-white border-r border-white'>
             <h1 className='text-2xl font-bold mb-10'>Admin Panel</h1>
 
             <ul className='space-y-2'>
